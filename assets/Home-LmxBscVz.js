@@ -1,1 +1,0 @@
-import{j as e,T as r,L as t}from"./index-y2xFW1ac.js";function o(){return e.jsxs(r,{children:["Welcome to"," ",e.jsx(t,{href:"https://github.com/remarkablegames/party-game-template",target:"_blank",rel:"noopener noreferrer",children:"Party Game Template"}),"!"]})}export{o as default};
