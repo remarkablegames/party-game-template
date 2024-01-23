@@ -1,6 +1,9 @@
 name: build
 on: [push, pull_request]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: npm ci --prefer-offline
 
-      - name: Lint commit messages
+      - name: Lint commit message
         run: npx commitlint --from=HEAD~1
 
       - name: Run ESLint
@@ -29,5 +32,12 @@ jobs:
       - name: Type check
         run: npm run lint:tsc
 
-      - name: Build app
-        run: npm run build
+      - name: Build game
+        run: npm run build -- --base /${{ github.event.repository.name }}/
+
+      - name: Deploy
+        if: github.ref_name == 'master'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: dist
