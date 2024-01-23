@@ -10,6 +10,7 @@ const routes = (
     <Route errorElement={<ErrorBoundary />}>
       <Route index element={<Home />} />
       <Route path="/room" element={<Room />} />
+      <Route path="/room/:room" element={<Room />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   </Route>

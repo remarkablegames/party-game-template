@@ -7,12 +7,28 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { useConnectionStatus } from 'driftdb-react';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function RoomDetails() {
   const { connected, debugUrl } = useConnectionStatus() as {
     connected: boolean;
     debugUrl: string;
   };
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!debugUrl) {
+      return;
+    }
+
+    const room = new URLSearchParams(location.search).get('_driftdb_room');
+
+    if (room) {
+      navigate(`/room/${room}`);
+    }
+  }, [debugUrl]);
 
   return (
     <TableContainer component={Paper}>
@@ -23,9 +39,11 @@ export default function RoomDetails() {
             <TableCell>debugUrl</TableCell>
           </TableRow>
         </TableHead>
+
         <TableBody>
           <TableRow>
             <TableCell>{String(connected)}</TableCell>
+
             <TableCell>
               {debugUrl && (
                 <Link href={debugUrl} rel="noopener noreferrer" target="_blank">
