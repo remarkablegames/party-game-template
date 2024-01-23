@@ -38,7 +38,7 @@ jobs:
           VITE_DRIFTDB_URL: ${{ vars.DRIFTDB_URL }}
 
       - name: Catch-all routes
-        run: ln -s dist/index.html dist/404.html
+        run: cp dist/index.html dist/404.html
 
       - name: Deploy
         if: github.ref_name == 'master'
