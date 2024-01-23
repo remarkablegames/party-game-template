@@ -1,0 +1,48 @@
+{
+  "name": "party-game-template",
+  "version": "1.0.0-alpha",
+  "description": "Party Game Template",
+  "author": "Mark <mark@remarkablemark.org>",
+  "scripts": {
+    "build": "vite build",
+    "clean": "rm -rf dist",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:tsc": "tsc --noEmit",
+    "postinstall": "husky install",
+    "preview": "vite preview",
+    "start": "vite --open"
+  },
+  "dependencies": {
+    "@emotion/react": "11.11.3",
+    "@emotion/styled": "11.11.0",
+    "@fontsource/roboto": "5.0.8",
+    "@mui/icons-material": "5.15.6",
+    "@mui/material": "5.15.6",
+    "@reduxjs/toolkit": "2.0.1",
+    "@types/react": "18.2.48",
+    "@types/react-dom": "18.2.18",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-redux": "9.1.0",
+    "react-router-dom": "6.21.3",
+    "typescript": "5.3.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "18.5.0",
+    "@commitlint/config-conventional": "18.5.0",
+    "@typescript-eslint/eslint-plugin": "6.19.1",
+    "@typescript-eslint/parser": "6.19.1",
+    "@vitejs/plugin-react-swc": "3.5.0",
+    "eslint": "8.56.0",
+    "eslint-plugin-prettier": "5.1.3",
+    "eslint-plugin-simple-import-sort": "10.0.0",
+    "eslint-plugin-tsdoc": "0.2.17",
+    "husky": "8.0.3",
+    "lint-staged": "15.2.0",
+    "prettier": "3.2.4",
+    "vite": "5.0.12"
+  },
+  "private": true,
+  "license": "MIT"
+}
