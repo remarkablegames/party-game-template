@@ -7,7 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
-import { useConnectionStatus } from 'driftdb-react';
+import { RoomQRCode, useConnectionStatus } from 'driftdb-react';
 import { useParams } from 'react-router-dom';
 import { useRedirectToRoom } from 'src/hooks';
 
@@ -54,6 +54,8 @@ export default function RoomDetails() {
           </TableBody>
         </Table>
       </TableContainer>
+
+      <RoomQRCode />
     </>
   );
 }
