@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   return (
     <Box sx={{ textAlign: 'center' }}>
-      <Typography component="h1" gutterBottom variant="h2">
+      <Typography component="h1" paragraph variant="h2">
         Party Game Template
       </Typography>
 
