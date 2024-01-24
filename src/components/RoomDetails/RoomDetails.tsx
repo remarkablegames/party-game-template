@@ -7,7 +7,11 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
-import { RoomQRCode, useConnectionStatus } from 'driftdb-react';
+import {
+  RoomQRCode,
+  useConnectionStatus,
+  useUniqueClientId,
+} from 'driftdb-react';
 import { useEffect, useState } from 'react';
 
 export default function RoomDetails() {
@@ -17,6 +21,8 @@ export default function RoomDetails() {
     connected: boolean;
     debugUrl: string;
   };
+
+  const clientId = useUniqueClientId();
 
   useEffect(() => {
     if (!connected) {
@@ -36,6 +42,10 @@ export default function RoomDetails() {
     <>
       <Typography component="h1" paragraph variant="h4">
         Room: <code>{room}</code>
+      </Typography>
+
+      <Typography paragraph>
+        Client ID: <code>{clientId}</code>
       </Typography>
 
       <TableContainer component={Paper}>
