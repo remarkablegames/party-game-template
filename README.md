@@ -2,11 +2,13 @@
 
 [![build](https://github.com/remarkablegames/party-game-template/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablegames/party-game-template/actions/workflows/build.yml)
 
-Party game template.
+🥳 Party game template.
 
 ## Stack
 
+- [DriftDB](https://driftdb.com/)
 - [MUI](https://mui.com/)
+- [React](https://react.dev/)
 - [Vite](https://vitejs.dev/)
 
 ## Prerequisites
