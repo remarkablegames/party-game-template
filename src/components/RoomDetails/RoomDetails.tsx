@@ -8,20 +8,34 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
 import { RoomQRCode, useConnectionStatus } from 'driftdb-react';
-import { useSearchParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 export default function RoomDetails() {
-  const [searchParams] = useSearchParams();
+  const [room, setRoom] = useState('');
 
   const { connected, debugUrl } = useConnectionStatus() as {
     connected: boolean;
     debugUrl: string;
   };
 
+  useEffect(() => {
+    if (!connected) {
+      return;
+    }
+
+    const driftdbRoom = new URLSearchParams(location.search).get(
+      '_driftdb_room',
+    );
+
+    if (driftdbRoom) {
+      setRoom(driftdbRoom);
+    }
+  }, [connected]);
+
   return (
     <>
       <Typography component="h1" paragraph variant="h4">
-        Room: <code>{searchParams.get('_driftdb_room')}</code>
+        Room: <code>{room}</code>
       </Typography>
 
       <TableContainer component={Paper}>
