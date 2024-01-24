@@ -14,7 +14,7 @@ import {
 } from 'driftdb-react';
 import { useEffect, useState } from 'react';
 
-export default function RoomDetails() {
+export default function ConnectionDetails() {
   const [room, setRoom] = useState('');
 
   const { connected, debugUrl } = useConnectionStatus() as {
