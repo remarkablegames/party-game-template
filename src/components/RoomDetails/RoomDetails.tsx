@@ -8,10 +8,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
 import { RoomQRCode, useConnectionStatus } from 'driftdb-react';
-import { useParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 export default function RoomDetails() {
-  const { room } = useParams();
+  const [searchParams] = useSearchParams();
 
   const { connected, debugUrl } = useConnectionStatus() as {
     connected: boolean;
@@ -21,7 +21,7 @@ export default function RoomDetails() {
   return (
     <>
       <Typography component="h1" paragraph variant="h4">
-        Room: {room}
+        Room: <code>{searchParams.get('_driftdb_room')}</code>
       </Typography>
 
       <TableContainer component={Paper}>
