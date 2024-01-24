@@ -9,10 +9,10 @@ import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
 import { RoomQRCode, useConnectionStatus } from 'driftdb-react';
 import { useParams } from 'react-router-dom';
-import { useRedirectToRoom } from 'src/hooks';
+// import { useRedirectToRoom } from 'src/hooks';
 
 export default function RoomDetails() {
-  useRedirectToRoom();
+  // useRedirectToRoom();
   const { room } = useParams();
 
   const { connected, debugUrl } = useConnectionStatus() as {
