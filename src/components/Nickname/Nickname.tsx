@@ -13,27 +13,36 @@ export default function Nickname() {
     setNickname(event.target.value);
   }
 
+  function handleSubmit(event: React.ChangeEvent<HTMLFormElement>) {
+    event.preventDefault();
+    handleSave();
+  }
+
+  function handleSave() {
+    setPlayerNickname(nickname);
+    setLocalStorageNickname(nickname);
+    setOpen(false);
+  }
+
   return (
     <Dialog
       open={open}
       id="nickname"
-      onSave={() => {
-        setPlayerNickname(nickname);
-        setLocalStorageNickname(nickname);
-        setOpen(false);
-      }}
+      onSave={handleSave}
       title="Choose a nickname"
     >
-      <TextField
-        autoFocus
-        label="Enter your nickname"
-        margin="dense"
-        onChange={handleChange}
-        placeholder={nickname || 'Nickname'}
-        required
-        value={nickname}
-        variant="outlined"
-      />
+      <form onSubmit={handleSubmit}>
+        <TextField
+          autoFocus
+          label="Enter your nickname"
+          margin="dense"
+          onChange={handleChange}
+          placeholder={nickname || 'Nickname'}
+          required
+          value={nickname}
+          variant="outlined"
+        />
+      </form>
     </Dialog>
   );
 }
