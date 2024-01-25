@@ -28,7 +28,9 @@ export default function CustomDialog(props: Props) {
       <DialogTitle id={titleId}>{props.title}</DialogTitle>
 
       <DialogContent>
-        <DialogContentText id={contentId}>{props.children}</DialogContentText>
+        <DialogContentText component="div" id={contentId}>
+          {props.children}
+        </DialogContentText>
       </DialogContent>
 
       <DialogActions>
