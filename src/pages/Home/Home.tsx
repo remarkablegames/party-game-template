@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
+import { setLocalStorageHost } from 'src/helpers';
 
 export default function Home() {
   return (
@@ -18,7 +19,13 @@ export default function Home() {
       </Typography>
 
       <Typography sx={{ marginBottom: 3 }}>
-        <Button component={Link} size="large" to="/room" variant="contained">
+        <Button
+          component={Link}
+          onClick={() => setLocalStorageHost(true)}
+          size="large"
+          to="/room"
+          variant="contained"
+        >
           Create room
         </Button>
       </Typography>

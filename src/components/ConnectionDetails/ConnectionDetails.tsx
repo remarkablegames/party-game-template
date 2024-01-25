@@ -9,25 +9,22 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
-import {
-  RoomQRCode,
-  useConnectionStatus,
-  useUniqueClientId,
-} from 'driftdb-react';
+import { RoomQRCode, useConnectionStatus } from 'driftdb-react';
 import { useEffect, useState } from 'react';
-import { usePlayer, useSetPlayerActive } from 'src/hooks';
+import { useHost, usePlayer, useSetHost, useSetPlayerActive } from 'src/hooks';
 
 export default function ConnectionDetails() {
+  useSetHost();
   useSetPlayerActive();
-  const { players } = usePlayer();
+
+  const { host } = useHost();
+  const { playerId, players } = usePlayer();
   const [room, setRoom] = useState('');
 
   const { connected, debugUrl } = useConnectionStatus() as {
     connected: boolean;
     debugUrl: string;
   };
-
-  const clientId = useUniqueClientId();
 
   useEffect(() => {
     if (!connected) {
@@ -50,7 +47,8 @@ export default function ConnectionDetails() {
       </Typography>
 
       <Typography paragraph>
-        Client ID: <code>{clientId}</code>
+        Player ID: <code>{playerId}</code>{' '}
+        {playerId === host && <em>(Host)</em>}
       </Typography>
 
       <TableContainer component={Paper}>
