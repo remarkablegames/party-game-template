@@ -62,6 +62,7 @@ export function usePlayer() {
   return {
     player,
     playerId,
+    players,
 
     activePlayersCount: Object.values(players).filter(({ active }) => active)
       .length,

@@ -1,3 +1,5 @@
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
@@ -13,8 +15,10 @@ import {
   useUniqueClientId,
 } from 'driftdb-react';
 import { useEffect, useState } from 'react';
+import { usePlayer } from 'src/hooks';
 
 export default function ConnectionDetails() {
+  const { players } = usePlayer();
   const [room, setRoom] = useState('');
 
   const { connected, debugUrl } = useConnectionStatus() as {
@@ -76,6 +80,15 @@ export default function ConnectionDetails() {
           </TableBody>
         </Table>
       </TableContainer>
+
+      <br />
+
+      <Alert>
+        <AlertTitle>Players</AlertTitle>
+        <pre>
+          <code>{JSON.stringify(players, null, 4)}</code>
+        </pre>
+      </Alert>
 
       <RoomQRCode />
     </>
