@@ -15,9 +15,10 @@ import {
   useUniqueClientId,
 } from 'driftdb-react';
 import { useEffect, useState } from 'react';
-import { usePlayer } from 'src/hooks';
+import { usePlayer, useSetPlayerActive } from 'src/hooks';
 
 export default function ConnectionDetails() {
+  useSetPlayerActive();
   const { players } = usePlayer();
   const [room, setRoom] = useState('');
 
