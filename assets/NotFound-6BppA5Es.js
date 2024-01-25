@@ -1,1 +1,0 @@
-import{j as o,T as r,L as t,a as n}from"./index-iS-hhRUJ.js";import{u as a}from"./useSetDocumentTitle-ZZuxvNyp.js";function i(){return a("Not Found"),o.jsxs(o.Fragment,{children:[o.jsx(r,{component:"h1",paragraph:!0,variant:"h4",children:"Not Found"}),o.jsxs(r,{paragraph:!0,children:["Go"," ",o.jsx(t,{component:n,to:"/",children:"home"}),"."]})]})}export{i as default};
