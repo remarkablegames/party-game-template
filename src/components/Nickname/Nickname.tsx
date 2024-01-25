@@ -6,11 +6,14 @@ import { usePlayer } from 'src/hooks';
 
 export default function Nickname() {
   const [open, setOpen] = useState(true);
+  const [error, setError] = useState(false);
   const [nickname, setNickname] = useState(getLocalStorageNickname());
   const { setPlayerNickname } = usePlayer();
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    setNickname(event.target.value);
+    const { value } = event.target;
+    setError(!value);
+    setNickname(value);
   }
 
   function handleSubmit(event: React.ChangeEvent<HTMLFormElement>) {
@@ -19,6 +22,9 @@ export default function Nickname() {
   }
 
   function handleSave() {
+    if (!nickname) {
+      return setError(true);
+    }
     setPlayerNickname(nickname);
     setLocalStorageNickname(nickname);
     setOpen(false);
@@ -34,6 +40,7 @@ export default function Nickname() {
       <form onSubmit={handleSubmit}>
         <TextField
           autoFocus
+          error={error}
           label="Enter your nickname"
           margin="dense"
           onChange={handleChange}
