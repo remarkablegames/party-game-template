@@ -44,17 +44,15 @@ export function usePlayer() {
       switch (type) {
         case ActionType.active:
           player.active = payload.active!;
-          setPlayer(player);
-          return state;
+          break;
 
         case ActionType.nickname:
           player.nickname = payload.nickname!;
-          setPlayer(player);
-          return state;
-
-        default:
-          return state;
+          break;
       }
+
+      setPlayer(state[playerId]);
+      return state;
     },
     initialReducerState,
   );
