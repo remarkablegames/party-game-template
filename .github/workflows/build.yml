@@ -36,6 +36,7 @@ jobs:
         run: npm run build -- --base /${{ github.event.repository.name }}/
         env:
           VITE_DRIFTDB_URL: ${{ vars.DRIFTDB_URL }}
+          VITE_GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
 
       - name: Catch-all routes
         run: cp dist/index.html dist/404.html
