@@ -14,7 +14,7 @@
     "start": "vite --open"
   },
   "dependencies": {
-    "@emotion/react": "11.11.4",
+    "@emotion/react": "11.13.0",
     "@emotion/styled": "11.13.0",
     "@fontsource/roboto": "5.0.13",
     "@mui/icons-material": "5.16.4",
