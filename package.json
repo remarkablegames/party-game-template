@@ -21,7 +21,7 @@
     "@mui/material": "7.3.1",
     "@reduxjs/toolkit": "2.8.2",
     "@types/react": "19.1.11",
-    "@types/react-dom": "19.1.7",
+    "@types/react-dom": "19.1.8",
     "driftdb-react": "1.0.12",
     "react": "19.1.1",
     "react-dom": "19.1.1",
