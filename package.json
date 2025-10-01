@@ -27,7 +27,7 @@
     "react-dom": "19.1.1",
     "react-redux": "9.2.0",
     "react-router-dom": "7.9.3",
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   },
   "devDependencies": {
     "@commitlint/cli": "20.0.0",
