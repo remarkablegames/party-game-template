@@ -45,7 +45,7 @@
     "lint-staged": "16.2.7",
     "prettier": "3.7.4",
     "typescript-eslint": "8.48.1",
-    "vite": "7.2.6",
+    "vite": "7.2.7",
     "vite-plugin-html": "3.2.2"
   },
   "overrides": {
