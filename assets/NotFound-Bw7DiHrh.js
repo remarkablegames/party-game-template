@@ -1,0 +1,1 @@
+import{H as e,b as t,et as n,o as r,x as i}from"./index-DxfpX7m0.js";var a=n();function o(){return r(`Not Found`),(0,a.jsxs)(a.Fragment,{children:[(0,a.jsx)(i,{component:`h1`,paragraph:!0,variant:`h4`,children:`Not Found`}),(0,a.jsxs)(i,{paragraph:!0,children:[`Go`,` `,(0,a.jsx)(t,{component:e,to:`/`,children:`home`}),`.`]})]})}export{o as default};
