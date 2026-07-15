@@ -16,13 +16,17 @@ updates:
       eslint:
         patterns:
           - '@eslint/*'
+          - 'eslint*'
+          - prettier
       mui:
         patterns:
           - '@mui/*'
-      prettier:
+      react:
         patterns:
-          - prettier
-          - eslint-plugin-prettier
+          - '@types/react'
+          - '@types/react-dom'
+          - react
+          - react-dom
       typescript-eslint:
         patterns:
           - '@typescript-eslint/*'
