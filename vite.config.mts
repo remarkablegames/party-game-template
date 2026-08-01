@@ -6,7 +6,7 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 export default defineConfig({
   resolve: {
     alias: {
-      src: resolve(__dirname, 'src'),
+      src: resolve(import.meta.dirname, 'src'),
     },
   },
   plugins: [createHtmlPlugin(), react()],
