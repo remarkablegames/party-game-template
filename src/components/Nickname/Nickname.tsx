@@ -23,7 +23,8 @@ export default function Nickname() {
 
   function handleSave() {
     if (!nickname) {
-      return setError(true);
+      setError(true);
+      return;
     }
     setPlayerNickname(nickname);
     setLocalStorageNickname(nickname);

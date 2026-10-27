@@ -38,16 +38,21 @@ export function usePlayer() {
     DatabaseKey.players,
     (state, action) => {
       const { payload, type } = action;
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       state[payload.playerId] = state[payload.playerId] || {};
       const player = state[payload.playerId];
 
       switch (type) {
         case ActionType.active:
-          player.active = payload.active!;
+          if (typeof payload.active === 'boolean') {
+            player.active = payload.active;
+          }
           break;
 
         case ActionType.nickname:
-          player.nickname = payload.nickname!;
+          if (payload.nickname) {
+            player.nickname = payload.nickname;
+          }
           break;
       }
 
@@ -65,16 +70,18 @@ export function usePlayer() {
     activePlayersCount: Object.values(players).filter(({ active }) => active)
       .length,
 
-    setPlayerActive: (active: boolean) =>
+    setPlayerActive: (active: boolean) => {
       dispatch({
         type: ActionType.active,
         payload: { playerId, active },
-      }),
+      });
+    },
 
-    setPlayerNickname: (nickname: string) =>
+    setPlayerNickname: (nickname: string) => {
       dispatch({
         type: ActionType.nickname,
         payload: { playerId, nickname },
-      }),
+      });
+    },
   };
 }

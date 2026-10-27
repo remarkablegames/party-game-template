@@ -10,7 +10,7 @@ export default function GlobalSnackbar() {
   const snackbar = useSelector((state) => state.snackbar);
 
   const handleClose = useCallback(
-    (event: Event | SyntheticEvent, reason?: string) =>
+    (_event: Event | SyntheticEvent, reason?: string) =>
       reason !== 'clickaway' && dispatch(actions.resetSnackbar()),
     [dispatch, actions],
   );

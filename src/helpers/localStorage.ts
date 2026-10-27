@@ -18,7 +18,7 @@ export function setLocalStorageHost(isHost: boolean): void {
 }
 
 export function getLocalStorageNickname(): string {
-  return localStorage.getItem(LocalStorageKey.nickname) || '';
+  return localStorage.getItem(LocalStorageKey.nickname) ?? '';
 }
 
 export function setLocalStorageNickname(nickname: string): void {

@@ -21,7 +21,9 @@ export default function Home() {
       <Typography sx={{ marginBottom: 3 }}>
         <Button
           component={Link}
-          onClick={() => setLocalStorageHost(true)}
+          onClick={() => {
+            setLocalStorageHost(true);
+          }}
           size="large"
           to="/room"
           variant="contained"
