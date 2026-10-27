@@ -1,8 +1,7 @@
 {
   "name": "party-game-template",
+  "private": true,
   "version": "1.0.0-alpha",
-  "description": "Party Game Template",
-  "author": "Mark <mark@remarkablemark.org>",
   "scripts": {
     "build": "npm run clean && vite build",
     "clean": "rm -rf dist",
@@ -35,7 +34,7 @@
     "@eslint/compat": "2.1.1",
     "@eslint/eslintrc": "3.3.7",
     "@eslint/js": "10.0.1",
-    "@vitejs/plugin-react-swc": "4.3.3",
+    "@vitejs/plugin-react": "6.1.2",
     "eslint": "10.13.0",
     "eslint-plugin-prettier": "5.5.7",
     "eslint-plugin-simple-import-sort": "14.0.0",
@@ -51,7 +50,5 @@
   "overrides": {
     "react": "$react",
     "react-dom": "$react-dom"
-  },
-  "private": true,
-  "license": "MIT"
+  }
 }

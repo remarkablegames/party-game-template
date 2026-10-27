@@ -1,5 +1,6 @@
-import react from '@vitejs/plugin-react-swc';
-import { resolve } from 'path';
+import { resolve } from 'node:path';
+
+import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 
