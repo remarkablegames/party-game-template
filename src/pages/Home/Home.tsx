@@ -10,11 +10,11 @@ import { setLocalStorageHost } from 'src/helpers';
 export default function Home() {
   return (
     <Box sx={{ textAlign: 'center' }}>
-      <Typography component="h1" paragraph variant="h2">
+      <Typography component="h1" gutterBottom variant="h2">
         Party Game Template
       </Typography>
 
-      <Typography paragraph variant="h5">
+      <Typography gutterBottom variant="h5">
         Play with your friends
       </Typography>
 

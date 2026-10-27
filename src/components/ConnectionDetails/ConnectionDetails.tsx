@@ -42,11 +42,11 @@ export default function ConnectionDetails() {
 
   return (
     <>
-      <Typography component="h1" paragraph variant="h4">
+      <Typography component="h1" gutterBottom variant="h4">
         Room: <code>{room}</code>
       </Typography>
 
-      <Typography paragraph>
+      <Typography gutterBottom>
         Player ID: <code>{playerId}</code>{' '}
         {playerId === host && <em>(Host)</em>}
       </Typography>
